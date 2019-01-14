@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vault-test
+  namespace: application
+spec:
+  restartPolicy: Never
+  serviceAccountName: vault-auth
+  containers:
+  - name: vault-test
+    image: "benno001/vault_test@sha256:0c64ca9bd3458daff891467ed7e9a6921994a42cde70beb83a981e31995c4e9c"
+    imagePullPolicy: Always
+    env:
+      - name: VAULT_ADDR
+        value: "http://vault-vault-http.default.svc.cluster.local:8200"
+      - name: VERIFY_VAULT_CERT
+        value: "false"
+      - name: VAULT_TOKEN_FILE
+        value: "/var/run/secrets/kubernetes.io/serviceaccount/token"
+      - name: VAULT_ROLE
+        value: "demo"

@@ -1,0 +1,1 @@
+ vault write pki_int/revoke serial_number=$(cat text.example.pem | awk 'END{print $2}')

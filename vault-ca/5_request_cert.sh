@@ -1,0 +1,1 @@
+vault write pki_int/issue/example-dot-com common_name="test.example.com" ttl="24h" > text.example.pem

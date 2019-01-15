@@ -2,3 +2,6 @@ venv
 token.txt
 dns.yaml
 Makefile
+*.pem
+*.csr
+*.crt

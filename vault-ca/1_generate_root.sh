@@ -1,0 +1,1 @@
+vault write -field=certificate pki/root/generate/internal common_name="example.com" ttl=87600h > RootCA_cert.crt
